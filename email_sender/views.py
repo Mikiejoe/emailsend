@@ -10,9 +10,9 @@ def sendEemail(request):
     if request.method == 'POST':
         subject = request.data['subject']
         message = request.data['message']
-        email = request.data['email']
+        # email = request.data['email']
         # recipient_list = request.data['recipient_list']
         # send_mail(subject, message, [email])
-        send_mail(subject, message,from_email=settings.EMAIL_HOST_USER, recipient_list=[email])
+        send_mail(subject, message,from_email=settings.EMAIL_HOST_USER, recipient_list=["reaganr615@gmail.com"])
         return Response(status=status.HTTP_200_OK)
     return Response(status=status.HTTP_400_BAD_REQUEST)
